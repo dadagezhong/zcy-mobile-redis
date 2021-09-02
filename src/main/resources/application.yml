@@ -1,0 +1,30 @@
+#端口号
+server:
+  port: 8081
+
+spring:
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    #assword:
+  # ========================数据库相关配置=====================
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/nba?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    data-password: 1234
+
+    # 使用阿里巴巴druid数据源，默认使用自带
+    type: com.alibaba.druid.pool.DruidDataSource
+
+#开启控制台打印sql
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # mybatis 下划线转驼峰配置
+    map-underscore-to-camel-case: true
+  # 配置扫描
+  mapper-locations: classpath:mapper/*.xml
+  # 实体类所在的包别名
+  type-aliases-package: com.zcy.mobile.pojo
