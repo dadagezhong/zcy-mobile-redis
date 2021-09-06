@@ -34,7 +34,7 @@ public class RedisController {
 
     @RequestMapping("test")
     public Object test(){
-        //step1 先从redis中取
+        //step1 先从redis中取，redis空则从DB取值
         String strJson=(String) redisUtils.get("nbaPlayerCache");
         if (strJson==null){
             System.out.println("从db取值");
